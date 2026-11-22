@@ -30,7 +30,8 @@ export const Home = () => {
   };
 
   return (
-    <section>
+    // min-h reserva el espacio del listado mientras carga: evita que el footer "salte" (mejora el CLS de Lighthouse).
+    <section className="min-h-[70vh]">
       <h1 className="text-2xl font-bold">Catalogo de peliculas</h1>
 
       {/* Buscador (opcional del TP) */}
