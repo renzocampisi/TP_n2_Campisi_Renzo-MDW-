@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+/* Colores y fuente propios. Usamos fuentes del sistema (sin descargar nada) para que cargue mas rapido. */
+@theme {
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --color-brand-50: #eef2ff;
+  --color-brand-600: #4338ca;
+  --color-brand-700: #3730a3;
+  --color-brand-900: #1e1b4b;
+}
