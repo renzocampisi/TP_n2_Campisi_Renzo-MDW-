@@ -8,9 +8,11 @@ export function validateBody(schema: ZodType) {
 
     // Datos invalidos -> 400 con un mensaje claro y el detalle por campo.
     if (!result.success) {
+      const { fieldErrors, formErrors } = result.error.flatten();
       res.status(400).json({
-        error: "Los datos enviados no son validos",
-        details: result.error.flatten().fieldErrors,
+        // formErrors son errores generales (ej: "Hay que enviar al menos un campo para editar").
+        error: formErrors[0] ?? "Los datos enviados no son validos",
+        details: fieldErrors,
       });
       return;
     }
